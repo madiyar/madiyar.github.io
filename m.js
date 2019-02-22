@@ -1,20 +1,19 @@
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 ctx.fillStyle = "#12141b";
+ctx.font = "14px Courier New";
 
 //making the canvas full screen
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset
-//var letters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
-
-var letters = "әіңғүұқөһ";
+var letters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑әіңғүұқөһ";
 
 //converting the string into an array of single characters
 chinese = letters.split("");
 
-var font_size = 16;
+var font_size = 14;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];

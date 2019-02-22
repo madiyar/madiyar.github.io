@@ -7,9 +7,12 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset
-var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+//var letters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+
+var letters = "әіңғүұқөһ";
+
 //converting the string into an array of single characters
-chinese = chinese.split("");
+chinese = letters.split("");
 
 var font_size = 10;
 var columns = c.width/font_size; //number of columns for the rain
@@ -24,7 +27,7 @@ for(var x = 0; x < columns; x++)
 function draw() {
 	//Black BG for the canvas
 	//translucent BG to show trail
-	ctx.fillStyle = "rgba(18, 20, 27, 0.1)";
+	ctx.fillStyle = "rgba(18, 20, 27, 0.15)";
 	ctx.fillRect(0, 0, c.width, c.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
@@ -32,7 +35,7 @@ function draw() {
 	//looping over drops
 	for(var i = 0; i < drops.length; i++) {
 		//a random chinese character to print
-		var text = chinese[Math.floor(Math.random()*chinese.length)];
+		var text = letters[Math.floor(Math.random()*letters.length)];
 		//x = i*font_size, y = value of drops[i]*font_size
 		ctx.fillText(text, i*font_size, drops[i]*font_size);
 		

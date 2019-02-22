@@ -20,18 +20,16 @@ for(var x = 0; x < columns; x++)
 	drops[x] = 1; 
 
 //drawing the characters
-function draw()
-{
+function draw() {
 	//Black BG for the canvas
 	//translucent BG to show trail
-	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+	ctx.fillStyle = "rgba(0, 0, 0, 1)";
 	ctx.fillRect(0, 0, c.width, c.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
 	ctx.font = font_size + "px arial";
 	//looping over drops
-	for(var i = 0; i < drops.length; i++)
-	{
+	for(var i = 0; i < drops.length; i++) {
 		//a random chinese character to print
 		var text = chinese[Math.floor(Math.random()*chinese.length)];
 		//x = i*font_size, y = value of drops[i]*font_size

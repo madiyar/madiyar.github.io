@@ -1,5 +1,6 @@
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
+ctx.fillStyle = "#12141b";
 
 //making the canvas full screen
 c.height = window.innerHeight;

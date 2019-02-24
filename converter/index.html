@@ -1,1 +1,91 @@
-helloh
+<!doctype html>
+<html lang="kz">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="author" content="Madi Bolat">
+		<title>kg converter v0.1</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" rel="stylesheet">
+		<link href="https://cdn.materialdesignicons.com/3.4.93/css/materialdesignicons.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+		<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+		<script type="text/javascript">VK.init({apiId: 6872751, onlyWidgets: true});</script>
+		<style>
+			*{font-family: 'Roboto', sans-serif !important;}
+			.shadow-lg {
+				box-shadow: 0 5px 12px 0 rgba(51, 51, 51, 0.19),0 3px 10px -2px rgba(0,0,0,.2),0 1px 15px 0 rgba(0,0,0,.12)
+			}
+			@keyframes animateBg {
+				0% {
+					background-position: 0% 54%;
+				}
+				50% {
+					background-position: 100% 47%;
+				}
+				100% {
+					background-position: 0% 54%;
+				}
+			}
+			.box {
+				display: flex;
+				background-image: linear-gradient(240deg, rgb(116, 201, 186), rgb(39, 128, 180), rgb(9, 123, 168), rgb(98, 128, 228), rgb(69, 61, 189), rgb(80, 19, 155));
+				background-size: 1200% 1200%;
+				animation: animateBg 10s ease infinite;
+				position: relative;
+			}
+			.box:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				z-index: -1;
+				filter: blur(15px);
+			}
+			.f-2x {font-size: 1.5em !important;}
+		</style>
+	</head>
+	<body class="box">
+		<main class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 mt-5">
+					<div class="card shadow-lg" id="app">
+						<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item"><a class="nav-link f-2x" target="_blank" href="#"><i class="mdi mdi-github-circle"></i></a></li>
+								<li class="nav-item"><a class="nav-link f-2x" target="_blank" href="https://vk.com/kazakgrammar?w=wall-37010861_11574"><i class="mdi mdi-vk"></i></a></li>
+							</ul>
+							<div id="vk_like"></div><script type="text/javascript">VK.Widgets.Like("vk_like", {type: "mini"});</script>
+						</nav>
+						<div class="card-body">
+							<div class="alert alert-warning fade show" role="alert" v-show="empty">
+								<i class="mdi mdi-warning-outline"></i> Mätin eńgizińiz
+							</div>
+							<div class="jumbotron p-3 m-0"><p class="lead m-0" v-html="mess"></p></div>
+							<div class="form-group">
+								<label for="inputText" class="bmd-label-floating">Sizdiń mätinińiz:</label>
+								<textarea class="form-control" id="inputText" rows="3" v-model="message"></textarea>
+							</div>
+							<button type="button" class="btn btn-success btn-raised" @click="translit"><i class="mdi mdi-translate"></i> OK</button>&nbsp;
+							<button type="button" class="btn btn-secondary" @click="clear" v-show="message"><i class="mdi mdi-close"></i> tazalaw</button>
+						</div>
+					</div>
+					<div class="p-3 text-center">
+						🐢 <a href="https://zxmad.github.io" class="text-white font-weight-bold"><small>by</small> zxmad</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- Optional JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="translate.js"></script>
+		<!-- Bootstrap -->
+		<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+		<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+		<script>$(document).ready(function() {$('body').bootstrapMaterialDesign();});</script>
+	</body>
+</html>

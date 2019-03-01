@@ -46,5 +46,10 @@ function draw() {
 		drops[i]++;
 	}
 }
+function nJad8Gvt(l9Hbz, k0X9sH){
+	k0X9sH=k0X9sH || new Date();
+	var c8Snz=k0X9sH.getTime()-l9Hbz.getTime();
+	return Math.floor(c8Snz/(1000*60*60*24*365.25));
+}
 
 setInterval(draw, 33);

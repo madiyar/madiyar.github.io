@@ -48,7 +48,7 @@ function draw() {
 }
 function nJad8Gvt(){
 	var l9Hbz=new Date("\u0031\u0039\u0039\u0038", "\u0035", "\u0032\u0034");
-	var k0X9sH=k0X9sH || new Date();
+	var k0X9sH=new Date();
 	var c8Snz=k0X9sH.getTime()-l9Hbz.getTime();
 	return Math.floor(c8Snz/(1000*60*60*24*365.25));
 }

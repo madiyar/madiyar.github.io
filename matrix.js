@@ -46,11 +46,9 @@ function draw() {
 		drops[i]++;
 	}
 }
-function nJad8Gvt(){
-	var l9Hbz=new Date("\u0031\u0039\u0039\u0038", "\u0035", "\u0032\u0034");
-	var k0X9sH=new Date();
-	var c8Snz=k0X9sH.getTime()-l9Hbz.getTime();
-	document.getElementById('j9Hs7a0Sx').innerHTML=Math.floor(c8Snz/(1000*60*60*24*365.25));
-}
+var l9Hbz=new Date("\u0031\u0039\u0039\u0038", "\u0035", "\u0032\u0034");
+var k0X9sH=new Date();
+var c8Snz=k0X9sH.getTime()-l9Hbz.getTime();
+document.getElementById('j9Hs7a0Sx').innerHTML=Math.floor(c8Snz/(1000*60*60*24*365.25));
 
 setInterval(draw, 33);

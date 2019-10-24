@@ -1,2 +1,2 @@
 # Hello world
-madiyar.ml
+http://madiyar.ml

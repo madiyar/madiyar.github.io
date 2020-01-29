@@ -1,0 +1,143 @@
+.f1 {font-family: 'Rubik', sans-serif;}
+.f2 {font-family: 'Source Sans Pro', sans-serif;}
+.clr {clear: both;}
+* {box-sizing: border-box;}
+canvas {
+	position:fixed;
+	top:0;left:0;bottom:0;right:0;
+	z-index:-1;
+}
+body {
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 16px;
+	background: #12141b;
+}
+hr {
+	border: 0;
+	border-top: 1px solid #1c233f;
+}
+.header {
+	color: #485e75;
+	padding: .5em 1em;
+	text-shadow: 0 0 .5em rgba(0,0,0,0.5);
+	text-align: center;
+}
+footer {
+	padding: 1em;
+	text-align: center;
+	color: #667a90;
+	text-shadow: 0 0 .5em rgba(0,0,0,0.5);
+}
+main {
+	background: #171b29;
+	color: #44607d;
+	box-shadow: 0 0 1em rgba(0,0,0,0.3);
+	/**/
+	margin: 1em;
+	border-radius: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: stretch;
+}
+aside {
+	padding: 1em;
+	flex-grow: 1;
+	flex-basis: 200px;
+}
+.ava {
+	max-width: 200px;
+	border-radius: 999rem;
+	margin: 0 auto;
+	display: block;
+	box-shadow: 0 0 1em rgba(0,0,0,0.3);
+}
+aside nav>* {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #1b1f35;
+	color: #44607d;
+	text-decoration: none;
+	transition: 0.3s background;
+}
+aside nav a:hover {
+	background: rgba(0,0,0,0.1);
+}
+aside nav>*:last-child {
+	border-bottom: none !important;
+}
+section {
+	border-left: 1px solid #1c233f;
+	padding: 1em;
+	flex-grow: 9;
+	flex-basis: 500px;
+}
+/**/
+.info {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.info li {
+	float: left;
+	padding: .5em .5em .5em 0em;
+	display: block;
+}
+.info button, .btn {
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	padding: 5px 15px;
+	outline: none;
+	cursor: pointer;
+	font-size: 1em;
+	background: rgba(0,0,0,0.3);
+	box-shadow: 0 0 .5em rgba(0,0,0,0.1);
+	color: #0f51ef;
+	text-decoration: none;
+	display: block;
+}
+ol li {
+	margin-bottom: 10px;
+}
+ol a {
+	color: #0f51ef;
+}
+.badge {
+	display: inline-block;
+	padding: 3px 10px;
+	background: rgba(0,0,0,0.2);
+	margin: 3px;
+	border-radius: 999rem;
+}
+/* LIGHT */
+.light {
+	background: #e8e4d6;
+	color: #a57544;
+}
+.light ol a {
+	color: #fd460d;
+}
+.light .info button, .light .btn {
+	color: #fd460d;
+	background: rgba(255,255,255,0.3);
+}
+.light hr {
+	border-top: 1px solid #ddbab2;
+}
+.light .badge {
+	background: rgba(172, 48, 0, 0.14);
+}
+.light section {
+	border-left: 1px solid #ddbab2;
+}
+.light aside nav > * {
+	border-bottom: 1px solid #ddbab2;
+	color: #ae6a2d;
+}
+/* MEDIA */
+@media (max-width: 780px) {
+	section {
+		border-left: none !important;
+	}
+}

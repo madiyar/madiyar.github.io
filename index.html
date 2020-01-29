@@ -6,114 +6,91 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#12141b">
 	<!-- CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Karla" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<style>
-		.f1 {font-family: 'Baloo Bhai', cursive;}
-		.f2 {font-family: 'Karla', sans-serif;}
-		.clr {clear: both;}
-		body {
-			max-width: 500px;
-			margin: 0 auto;
-			font-size: 16px;
-			background: #12141b;
-		}
-		hr {
-			border: 0;
-			border-top: 1px solid #1c233f;
-		}
-		.header {
-			color: #485e75;
-			padding: .5em 1em;
-			text-shadow: 0 0 .5em rgba(0,0,0,0.5);
-			text-align: center;
-		}
-		main {
-			background: #171b29;
-			color: #44607d;
-			padding: 1em;
-			border-radius: 1em;
-			margin: 1em;
-			box-shadow: 0 0 1em rgba(0,0,0,0.3);
-		}
-		.menu a {
-			display: block;
-			float: left;
-			padding: .5em 1em;
-			color: #0f51ef;
-			text-decoration: none;
-		}
-		.menu a:hover {
-			text-decoration: underline;
-			color: #0e3492;
-			transition: 0.3s;
-		}
-		.info {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-		.info li {
-			float: left;
-			padding: .5em .5em .5em 0em;
-			display: block;
-		}
-		.info li:after {
-			content: " / ";
-			color: #1c2844;
-		}
-		.info a {
-			color: #0f51ef;
-			text-decoration: none;
-		}
-		.info a:hover {
-			text-decoration: underline;
-		}
-		.info a:visited {
-			color: #12c80a;
-		}
-		.info a:visited:hover {
-			color: #13921e;
-		}
-		footer {
-			padding: 1em;
-			text-align: center;
-			color: #667a90;
-			text-shadow: 0 0 .5em rgba(0,0,0,0.5);
-		}
-		canvas {
-			position:fixed;
-			top:0;left:0;bottom:0;right:0;
-			z-index:-1;
-		}
-	</style>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:900|Source+Sans+Pro" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/f5f6438ff0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<canvas id="c"></canvas>
 	<h1 class="header f1">descendant of nomads 👨🏻‍💻</h1>
-	<main>
-		<nav class="menu f1">
-			<a href="https://vk.cc/8p2BC2" target="_blank"><i class="fab fa-vk"></i></a>
-			<a href="https://github.com/zxmad" target="_blank"><i class="fab fa-github"></i></a>
-			<a href="https://github.com/zxmad/cartoon-beta" target="_blank"><i class="fa fa-code"></i> cartoon-beta</a>
-			<a href="https://zxmad.github.io/converter/"><i class="fa fa-language"></i> converter</a>
-			<a href="https://ә.blogspot.com/" target="_blank"><img src="https://www.google.com/s2/favicons?domain=https://ә.blogspot.com/"></a>
-			<div class="clr"></div>
-		</nav>
-		<hr>
-		<ul class="info f2">
-			<li><span id="j9Hs7a0Sx"></span> y.o.</li>
-			<li>KZ/ALA</li>
-			<li><a href="#go">#php</a></li>
-			<li><a href="#fuck">#web</a></li>
-			<li><a href="#your">#gamedev</a></li>
-			<li><a href="#self">#design</a></li>
-			<div class="clr"></div>
-		</ul>
-                <hr>
-                <a href="/cv.pdf">Download/Show CV</a>
+	<main id="app" v-bind:class="{light: !dark}">
+		<aside class="f2">
+			<img src="ava.png" class="ava">
+			<nav>
+				<li>{{ text['myName'][lang] }}</li>
+				<li>{{ text['city'][lang] }}, <span id="j9Hs7a0Sx"></span> {{ text['yo'][lang] }}</li>
+				<a href="https://github.com/zxmad" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a>
+				<a href="https://t.me/kawaii_neko" target="_blank"><i class="fab fa-fw fa-telegram-plane"></i> Telegram</a>
+				<a href="mailto:madiyar.bolatov97@gmail.com" target="_blank"><i class="fab fa-fw fa-google"></i> {{ text['mail'][lang] }}</a>
+				<a href="https://vk.cc/8p2BC2" target="_blank"><i class="fab fa-fw fa-vk"></i> {{ text['vk'][lang] }}</a>
+				<a href="cv.pdf" target="_blank"><i class="far fa-fw fa-file"></i> {{ text['resume'][lang] }} (CV)</a>
+			</nav>
+		</aside>
+		<section>
+			<ul class="info f2">
+				<li>
+					<button @click="setTheme()">
+						<span v-show="!dark"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>
+						<span v-show="dark"><i class="far fa-fw fa-moon" style="color:#666"></i></span>
+					</button>
+				</li>
+				<li>
+					<button @click="setLang()">
+						<i class="fas fa-fw fa-globe"></i> 
+						<span v-if="en">EN</span>
+						<span v-else>РУС</span>
+					</button>
+				</li>
+				<li>
+					<a href="cv.pdf" class="btn" download="cv"><i class="fas fa-fw fa-save"></i> {{ text['download'][lang] }} CV</a>
+				</li>
+				<div class="clr"></div>
+			</ul>
+			<hr>
+			<h3 class="f1">{{ text['projects'][lang] }}</h3>
+			<ol class="f2">
+				<li>
+					<a href="http://madiyar.ml/converter" target="_blank">NOQAT</a> <br>
+					{{ text['noqat'][lang] }} <br>
+					<span class="badge"><i class="fab fa-fw fa-vuejs"></i> Vue.JS</span>
+				</li>
+				<li>
+					<a href="https://github.com/zxmad/draw-hack" target="_blank">DrawHack</a> <br>
+					{{ text['drawhack'][lang] }} <br>
+					<span class="badge"><i class="fab fa-fw fa-node-js"></i> Node.JS</span>
+					<span class="badge">Express</span>
+					<span class="badge">Socket.IO</span>
+					<span class="badge">p5.JS</span>
+					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
+				</li>
+				<li>
+					<a href="http://madiyar.ml/paycard-interactive-form/" target="_blank">Interactive Paycard Form</a> <br>
+					{{ text['paycard'][lang] }} <br>
+					<span class="badge"><i class="fab fa-fw fa-vuejs"></i> Vue.JS</span>
+				</li>
+				<li>
+					<a href="https://github.com/zxmad/cartoon-beta" target="_blank">Cartoon Beta</a> <br>
+					{{ text['cartoon'][lang] }} <br>
+					<span class="badge"><i class="fab fa-fw fa-php"></i> PHP 5</span>
+					<span class="badge"><i class="fas fa-fw fa-code"></i> API</span>
+					<span class="badge"><i class="fas fa-fw fa-database"></i> MySQL</span>
+					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
+				</li>
+				<li>
+					<a href="https://github.com/zxmad/lomhub" target="_blank">Lomhub</a> <br>
+					{{ text['lomhub'][lang] }} <br>
+					<span class="badge"><i class="fab fa-fw fa-php"></i> PHP 5</span>
+					<span class="badge"><i class="fas fa-fw fa-database"></i> MySQL</span>
+					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
+				</li>
+			</ol>
+			<hr>
+			<h3 class="f1">{{ text['skills'][lang] }}</h3>
+		</section>
 	</main>
 	<footer class="f1">💅🏼 Madi Bolatov</footer>
-	<script src="/matrix.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="app.js"></script>
+	<script src="matrix.js"></script>
 </body>
 </html>

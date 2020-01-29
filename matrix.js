@@ -7,8 +7,8 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset
-var letters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑әіңғүұқөһ";
-var l9Hbz=new Date("\u0031\u0039\u0039\u0038", "\u0035", "\u0032\u0034");
+var letters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑ӘІҢҒҮҰҚӨҺ";
+var l9Hbz = new Date("\u0031\u0039\u0039\u0038", "\u0035", "\u0032\u0034");
 
 //converting the string into an array of single characters
 chinese = letters.split("");
@@ -31,7 +31,7 @@ function draw() {
 	ctx.fillRect(0, 0, c.width, c.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
-	ctx.font = font_size + "px arial";
+	ctx.font = font_size + "px Arial";
 	//looping over drops
 	for(var i = 0; i < drops.length; i++) {
 		//a random chinese character to print

@@ -32,7 +32,7 @@ footer {
 }
 main {
 	background: linear-gradient(to top, #131417, #212531);
-	color: #44607d;
+	color: #82a6cc;
 	box-shadow: 0 0 1em rgba(0,0,0,0.3);
 	/**/
 	margin: 1em;
@@ -59,7 +59,7 @@ aside nav>* {
 	padding: 10px;
 	border-bottom-width: thin;
 	border-bottom-style: solid;
-	color: #44607d;
+	color: #7c9fc4;
 	text-decoration: none;
 	transition: 0.3s background;
 }

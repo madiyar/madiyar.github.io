@@ -17,8 +17,10 @@
 		<aside class="f2">
 			<img src="ava.png" class="ava">
 			<nav>
-				<li>{{ text['myName'][lang] }}</li>
-				<li>{{ text['city'][lang] }}, <span id="j9Hs7a0Sx"></span> {{ text['yo'][lang] }}</li>
+				<li class="info">
+					<div>🧑 {{ text['myName'][lang] }}</div>
+					<div>⛰️ {{ text['city'][lang] }}, <span id="j9Hs7a0Sx"></span> {{ text['yo'][lang] }}</div>
+				</li>
 				<a href="https://github.com/zxmad" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a>
 				<a href="https://t.me/kawaii_neko" target="_blank"><i class="fab fa-fw fa-telegram-plane"></i> Telegram</a>
 				<a href="mailto:madiyar.bolatov97@gmail.com" target="_blank"><i class="fab fa-fw fa-google"></i> {{ text['mail'][lang] }}</a>
@@ -27,7 +29,7 @@
 			</nav>
 		</aside>
 		<section>
-			<ul class="info f2">
+			<ul class="menu f2">
 				<li>
 					<button @click="setTheme()">
 						<span v-show="!dark"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>

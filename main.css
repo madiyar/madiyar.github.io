@@ -30,7 +30,7 @@ footer {
 	text-shadow: 0 0 .5em rgba(0,0,0,0.5);
 }
 main {
-	background: #171b29;
+	background: linear-gradient(to top, #131417, #212531);
 	color: #44607d;
 	box-shadow: 0 0 1em rgba(0,0,0,0.3);
 	/**/
@@ -63,6 +63,17 @@ aside nav>* {
 }
 aside nav a:hover {
 	background: rgba(0,0,0,0.1);
+	transform: scale(1.05);
+}
+.info {
+	background: rgba(0,0,0,0.2);
+	margin: 10px auto;
+	border-radius: 15px;
+	box-shadow: 0 0 1em rgba(0,0,0,0.1);
+	border: none;
+}
+.info div {
+	padding: 5px 10px;
 }
 aside nav>*:last-child {
 	border-bottom: none !important;
@@ -74,17 +85,17 @@ section {
 	flex-basis: 500px;
 }
 /**/
-.info {
+.menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.info li {
+.menu li {
 	float: left;
 	padding: .5em .5em .5em 0em;
 	display: block;
 }
-.info button, .btn {
+.menu button, .btn {
 	border: 1px solid rgba(0,0,0,0.3);
 	border-radius: 5px;
 	padding: 5px 15px;
@@ -97,8 +108,13 @@ section {
 	text-decoration: none;
 	display: block;
 }
+h3 {
+	padding-left: 50px;
+	margin: ;
+}
 ol li {
-	margin-bottom: 10px;
+	margin: 5px auto;
+	padding: 10px;
 }
 ol a {
 	color: #0f51ef;
@@ -106,34 +122,35 @@ ol a {
 .badge {
 	display: inline-block;
 	padding: 3px 10px;
-	background: rgba(0,0,0,0.2);
 	margin: 3px;
 	border-radius: 999rem;
+	background: rgba(0,0,0,0.2);
+	box-shadow: 0 0 .6em rgba(0, 0, 0, 0.15);
 }
+/* DARK */
+
 /* LIGHT */
 .light {
-	background: #e8e4d6;
-	color: #a57544;
+	background: linear-gradient(to top,#d2e2e8, #fff);
+	color: #118a3a;
 }
 .light ol a {
-	color: #fd460d;
+	color: #2528db;
 }
-.light .info button, .light .btn {
-	color: #fd460d;
+.light .menu button, .light .btn {
+	color: #118a3a;
 	background: rgba(255,255,255,0.3);
 }
-.light hr {
-	border-top: 1px solid #ddbab2;
-}
 .light .badge {
-	background: rgba(172, 48, 0, 0.14);
+	background: rgba(17, 138, 58, 0.24);
+	color: #118a3a;
 }
-.light section {
-	border-left: 1px solid #ddbab2;
-}
+/* borders */
+.light hr {border-top: 1px solid #c8c8c8;}
+.light section {border-left: 1px solid #c8c8c8;}
 .light aside nav > * {
-	border-bottom: 1px solid #ddbab2;
-	color: #ae6a2d;
+	border-bottom: 1px solid #dbdbdb;
+	color: #006020;
 }
 /* MEDIA */
 @media (max-width: 780px) {

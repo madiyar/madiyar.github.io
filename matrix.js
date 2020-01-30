@@ -30,7 +30,7 @@ function draw() {
 	ctx.fillStyle = "rgba(18, 20, 27, 0.15)";
 	ctx.fillRect(0, 0, c.width, c.height);
 	
-	ctx.fillStyle = "#0F0"; //green text
+	ctx.fillStyle = "#050"; //green text
 	ctx.font = font_size + "px Arial";
 	//looping over drops
 	for(var i = 0; i < drops.length; i++) {
@@ -49,4 +49,4 @@ function draw() {
 	}
 }
 document.getElementById('j9Hs7a0Sx').innerHTML=Math.floor(c8Snz/(1000*60*60*24*365.25));
-setInterval(draw, 33);
+setInterval(draw, 40);

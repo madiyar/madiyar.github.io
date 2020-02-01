@@ -21,6 +21,10 @@ var app = new Vue({
 				'ru': 'Почта',
 				'en': 'E-mail'
 			},
+			'blog': {
+				'ru': 'Блог',
+				'en': 'Blog'
+			},
 			'vk': {
 				'ru': 'ВКонтакте',
 				'en': 'VK'

@@ -162,8 +162,8 @@ ol a {
 }
 
 .loading {
-	background: red;
-	position: absolute;
+	background: black;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -175,7 +175,7 @@ ol a {
 	position: relative;
 	width: 80px;
 	height: 80px;
-	margin: auto auto;
+	margin: 0 auto;
 }
 .lds-ring div {
 	box-sizing: border-box;

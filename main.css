@@ -162,7 +162,7 @@ ol a {
 }
 
 .loading {
-	background: black;
+	background: rgba(27, 32, 26, 0.95);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -171,11 +171,14 @@ ol a {
 }
 
 .lds-ring {
-	display: inline-block;
-	position: relative;
+	position: absolute;
 	width: 80px;
 	height: 80px;
-	margin: 0 auto;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .lds-ring div {
 	box-sizing: border-box;

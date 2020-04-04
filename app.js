@@ -3,6 +3,7 @@ var app = new Vue({
 	data: {
 		en: true,
 		dark: true,
+		loading: true,
 		lang: 'en',
 		text: {
 			'myName': {
@@ -75,5 +76,10 @@ var app = new Vue({
 		setTheme: function () {
 			this.dark = !this.dark;
 		}
+	},
+	mounted: function() {
+		this.$nextTick(function() {
+			this.loading = false;
+		})
 	}
 })

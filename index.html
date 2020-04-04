@@ -12,11 +12,11 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<body id="app">
-	<div style="color: red" v-if="loading">LOADING</div>
+<body>
 	<canvas id="c"></canvas>
 	<h1 class="header f1">descendant of nomads 👨🏻‍💻</h1>
-	<main v-bind:class="{light: !dark}">
+	<main id="app" v-bind:class="{light: !dark}">
+		<div style="color: yellow" v-if="loading">LOADING</div>
 		<aside class="f2">
 			<img src="ava.png" class="ava">
 			<nav>

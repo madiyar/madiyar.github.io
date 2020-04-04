@@ -79,7 +79,9 @@ var app = new Vue({
 	},
 	mounted: function() {
 		this.$nextTick(function() {
-			this.loading = false;
+			setTimeout(() => {
+				this.loading = false;
+			}, 1500);
 		})
 	}
 })

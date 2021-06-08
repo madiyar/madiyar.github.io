@@ -54,43 +54,14 @@
 			<hr>
 			<h3 class="f1">{{ text['projects'][lang] }}</h3>
 			<ol class="f2">
-				<li>
-					<a href="/converter" target="_blank">NOQAT</a> <br>
-					{{ text['noqat'][lang] }} <br>
-					<span class="badge"><i class="fab fa-fw fa-vuejs"></i> Vue.JS</span>
-				</li>
-				<li>
-					<a href="https://github.com/madbolat/draw-hack" target="_blank">DrawHack</a> <br>
-					{{ text['drawhack'][lang] }} <br>
-					<span class="badge"><i class="fab fa-fw fa-node-js"></i> Node.JS</span>
-					<span class="badge">Express</span>
-					<span class="badge">Socket.IO</span>
-					<span class="badge">p5.JS</span>
-					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
-				</li>
-				<li>
-					<a href="/paycard-interactive-form/" target="_blank">Interactive Paycard Form</a> <br>
-					{{ text['paycard'][lang] }} <br>
-					<span class="badge"><i class="fab fa-fw fa-vuejs"></i> Vue.JS</span>
-				</li>
-				<li>
-					<a href="https://github.com/madbolat/cartoon-beta" target="_blank">Cartoon Beta</a> <br>
-					{{ text['cartoon'][lang] }} <br>
-					<span class="badge"><i class="fab fa-fw fa-php"></i> PHP 5</span>
-					<span class="badge"><i class="fas fa-fw fa-code"></i> API</span>
-					<span class="badge"><i class="fas fa-fw fa-database"></i> MySQL</span>
-					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
-				</li>
-				<li>
-					<a href="https://github.com/madbolat/lomhub" target="_blank">Lomhub</a> <br>
-					{{ text['lomhub'][lang] }} <br>
-					<span class="badge"><i class="fab fa-fw fa-php"></i> PHP 5</span>
-					<span class="badge"><i class="fas fa-fw fa-database"></i> MySQL</span>
-					<span class="badge"><i class="fab fa-fw fa-bootstrap"></i> Bootstrap</span>
+				<li v-for="project in projects" :key="project.name">
+					<a :href="project.url" target="_blank">{{ project.name }}</a> <br>
+					{{ project.text[lang] }} <br>
+					<span class="badge" v-for="badge in project.badges" :key="badge.label">
+						<i :class="`fa-fw fa-${badge.i}`" v-show="!!badge.i"></i> {{ badge.label }}
+					</span>
 				</li>
 			</ol>
-			<hr>
-			<h3 class="f1">{{ text['skills'][lang] }}</h3>
 		</section>
 	</main>
 	<footer class="f1">💅🏼 Madi Bolatov</footer>

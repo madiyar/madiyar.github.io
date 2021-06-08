@@ -18,12 +18,6 @@ hr {
 	border-top-width: thin;
 	border-top-style: solid;
 }
-.header {
-	color: #485e75;
-	padding: .5em 1em;
-	text-shadow: 0 0 .5em rgba(0,0,0,0.5);
-	text-align: center;
-}
 footer {
 	padding: 1em;
 	text-align: center;
@@ -134,7 +128,7 @@ ol a {
 /* DARK */
 
 /* LIGHT */
-.light {
+.light main {
 	background: linear-gradient(to top,#d2e2e8, #fff);
 	color: #118a3a;
 }
@@ -158,4 +152,38 @@ ol a {
 	section {
 		border-left: none !important;
 	}
+}
+
+/* The alert message box */
+.alert {
+	margin: 1em;
+	padding: 1.5em 1.5em 3em 1.5em;
+	border-radius: 1em;
+  background-color: rgba(255, 0, 0, 0.228);
+  color: white;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	line-height: 1.5em;
+}
+
+.alert a {
+	color: lightgreen;
+}
+
+/* The close button */
+.close {
+  margin-left: 1em;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.close:hover {
+  color: rgb(255, 255, 255);
 }

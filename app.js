@@ -15,7 +15,7 @@ var app = new Vue({
 				badges: [ { i: 'vuejs fab', label: 'Vue.js' } ]
 			},
 			{
-				url: 'https://github.com/madbolat/draw-hack',
+				url: 'https://github.com/madiyar/draw-hack',
 				name: 'DrawHack',
 				text: {
 					ru: 'Приложение для совместного рисования на канвасе между несколькими пользователями с разных девайсов в реальном времени.',
@@ -39,7 +39,7 @@ var app = new Vue({
 				badges: [ { i: 'vuejs fab', label: 'Vue.js' } ]
 			},
 			{
-				url: 'https://github.com/madbolat/cartoon-beta',
+				url: 'https://github.com/madiyar/cartoon-beta',
 				name: 'Cartoon Beta',
 				text: {
 					ru: 'Аналог Кинопоиска для мультфильмов, мультсериалов, аниме и тд. Использует TheMovieDB API (20k+ мульт-ов) и VK API (для новостей).',
@@ -53,7 +53,7 @@ var app = new Vue({
 				]
 			},
 			{
-				url: 'https://github.com/madbolat/lomhub',
+				url: 'https://github.com/madiyar/lomhub',
 				name: 'Lomhub',
 				text: {
 					ru: 'Маркетплейс (как АлиЭкспресс, Satu.kz, OLX) для ломбардов Алматы.',
@@ -67,41 +67,27 @@ var app = new Vue({
 			}
 		],
 		text: {
-			'myName': {
-				'ru': 'Болатов Мадияр',
-				'en': 'Bolatov Madiyar'
+			ru: {
+				dep: 'УСТАРЕЛ',
+				www: 'Переходи на новый сайт',
+				name: 'Мадияр Болатов',
+				city: 'Алматы',
+				yo: 'лет',
+				mail: 'Почта',
+				cv: 'Резюме',
+				projects: 'Проекты',
+				download: 'Download'
 			},
-			'city': {
-				'ru': 'Алматы',
-				'en': 'Almaty'
-			},
-			'yo': {
-				'ru': 'лет',
-				'en': 'y.o.'
-			},
-			'mail': {
-				'ru': 'Почта',
-				'en': 'E-mail'
-			},
-			'blog': {
-				'ru': 'Блог',
-				'en': 'Blog'
-			},
-			'vk': {
-				'ru': 'ВКонтакте',
-				'en': 'VK'
-			},
-			'resume': {
-				'ru': 'Резюме',
-				'en': 'Resume'
-			},
-			'projects': {
-				'ru': 'Проекты',
-				'en': 'Projects'
-			},
-			'download': {
-				'ru': 'Скачать',
-				'en': 'Download'
+			en: {
+				dep: 'DEPRECATED',
+				www: 'Go to new site',
+				name: 'Madiyar Bolatov',
+				city: 'Almaty',
+				yo: 'y.o.',
+				mail: 'E-mail',
+				cv: 'Resume',
+				projects: 'Скачать',
+				download: 'Download'
 			}
 		}
 	},

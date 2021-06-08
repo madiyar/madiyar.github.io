@@ -14,57 +14,64 @@
 </head>
 <body>
 	<canvas id="c"></canvas>
-	<h1 class="header f1">descendant of nomads 👨🏻‍💻</h1>
-	<main id="app" v-bind:class="{light: !dark}">
-		<aside class="f2">
-			<img src="ava.png" class="ava">
-			<nav>
-				<li class="info">
-					<div>🧑 {{ text['myName'][lang] }}</div>
-					<div>⛰️ {{ text['city'][lang] }}, <span id="j9Hs7a0Sx"></span> {{ text['yo'][lang] }}</div>
-				</li>
-				<a href="https://github.com/madiyar" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a>
-				<a href="https://t.me/kawaii_neko" target="_blank"><i class="fab fa-fw fa-telegram-plane"></i> Telegram</a>
-				<a href="mailto:madiyar.bolatov97@gmail.com" target="_blank"><i class="fab fa-fw fa-google"></i> {{ text['mail'][lang] }}</a>
-				<a href="https://vk.com/@itdawg" target="_blank"><i class="fa fa-fw fa-book-open"></i> {{ text['blog'][lang] }}</a>
-				<a href="https://vk.cc/8p2BC2" target="_blank"><i class="fab fa-fw fa-vk"></i> {{ text['vk'][lang] }}</a>
-				<a href="cv.pdf" target="_blank"><i class="far fa-fw fa-file"></i> {{ text['resume'][lang] }} (CV)</a>
-			</nav>
-		</aside>
-		<section>
-			<ul class="menu f2">
-				<li>
-					<button @click="setTheme()">
-						<span v-show="!dark"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>
-						<span v-show="dark"><i class="far fa-fw fa-moon" style="color:#666"></i></span>
-					</button>
-				</li>
-				<li>
-					<button @click="setLang()">
-						<i class="fas fa-fw fa-globe"></i> 
-						<span v-if="en">EN</span>
-						<span v-else>РУС</span>
-					</button>
-				</li>
-				<li>
-					<a href="cv.pdf" class="btn" download="cv"><i class="fas fa-fw fa-save"></i> {{ text['download'][lang] }} CV</a>
-				</li>
-				<div class="clr"></div>
-			</ul>
-			<hr>
-			<h3 class="f1">{{ text['projects'][lang] }}</h3>
-			<ol class="f2">
-				<li v-for="project in projects" :key="project.name">
-					<a :href="project.url" target="_blank">{{ project.name }}</a> <br>
-					{{ project.text[lang] }} <br>
-					<span class="badge" v-for="badge in project.badges" :key="badge.label">
-						<i :class="`fa-fw fa-${badge.i}`" v-show="!!badge.i"></i> {{ badge.label }}
-					</span>
-				</li>
-			</ol>
-		</section>
-	</main>
-	<footer class="f1">💅🏼 Madi Bolatov</footer>
+	<div id="app" v-bind:class="{light: !dark}">
+		<div class="alert f2">
+			<div>
+				<b>{{text[lang].dep}}!!!</b><br>
+				{{text[lang].www}} → <a href="https://madiyar.dev/">madiyar.dev</a> <br>
+				R.I.P 2020 🥀
+			</div>
+			<span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+		</div>
+		<main>
+			<aside class="f2">
+				<img src="ava.png" class="ava">
+				<nav>
+					<li class="info">
+						<div>🧑 {{text[lang].name}}</div>
+						<div>⛰️ {{text[lang].city}}, <span id="j9Hs7a0Sx"></span> {{text[lang].yo}}</div>
+					</li>
+					<a href="https://github.com/madiyar" target="_blank"><i class="fab fa-fw fa-github"></i> GitHub</a>
+					<a href="https://t.me/kawaii_neko" target="_blank"><i class="fab fa-fw fa-telegram-plane"></i> Telegram</a>
+					<a href="mailto:hi@madiyar.dev" target="_blank"><i class="fab fa-fw fa-google"></i> {{text[lang].mail}}</a>
+					<a href="cv.pdf" target="_blank"><i class="far fa-fw fa-file"></i> {{text[lang].cv}} (CV)</a>
+				</nav>
+			</aside>
+			<section>
+				<ul class="menu f2">
+					<li>
+						<button @click="setTheme()">
+							<span v-show="!dark"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>
+							<span v-show="dark"><i class="far fa-fw fa-moon" style="color:#666"></i></span>
+						</button>
+					</li>
+					<li>
+						<button @click="setLang()">
+							<i class="fas fa-fw fa-globe"></i> 
+							<span v-if="en">EN</span>
+							<span v-else>РУС</span>
+						</button>
+					</li>
+					<li>
+						<a href="cv.pdf" class="btn" :download="text[lang].name"><i class="fas fa-fw fa-save"></i> {{text[lang].download}} CV</a>
+					</li>
+					<div class="clr"></div>
+				</ul>
+				<hr>
+				<h3 class="f1">{{text[lang].projects}}</h3>
+				<ol class="f2">
+					<li v-for="project in projects" :key="project.name">
+						<a :href="project.url" target="_blank">{{project.name}}</a> <br>
+						{{project.text[lang]}} <br>
+						<span class="badge" v-for="badge in project.badges" :key="badge.label">
+							<i :class="`fa-fw fa-${badge.i}`" v-show="!!badge.i"></i> {{badge.label}}
+						</span>
+					</li>
+				</ol>
+			</section>
+		</main>
+	</div>
+	<footer class="f1">💅🏼 Madiyar Bolatov</footer>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="app.js"></script>
 	<script src="matrix.js"></script>

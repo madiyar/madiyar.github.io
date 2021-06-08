@@ -1,8 +1,7 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-		en: true,
-		dark: true,
+		theme: 'dark',
 		lang: 'en',
 		projects: [
 			{
@@ -76,7 +75,7 @@ var app = new Vue({
 				mail: 'Почта',
 				cv: 'Резюме',
 				projects: 'Проекты',
-				download: 'Download'
+				download: 'Скачать'
 			},
 			en: {
 				dep: 'DEPRECATED',
@@ -86,18 +85,23 @@ var app = new Vue({
 				yo: 'y.o.',
 				mail: 'E-mail',
 				cv: 'Resume',
-				projects: 'Скачать',
+				projects: 'Projects',
 				download: 'Download'
 			}
 		}
 	},
 	methods: {
 		setLang: function () {
-			this.en = !this.en;
-			this.lang = (this.en) ? 'en' : 'ru';
+			this.lang = this.lang === 'ru' ? 'en' : 'ru';
+			localStorage.setItem('lang', this.lang);
 		},
 		setTheme: function () {
-			this.dark = !this.dark;
+			this.theme = this.theme === 'dark' ? 'light' : 'dark';
+			localStorage.setItem('theme', this.theme);
 		}
+	},
+	beforeMount() {
+		this.lang = localStorage.getItem('lang') || 'en';
+		this.theme = localStorage.getItem('theme') || 'dark';
 	}
 })

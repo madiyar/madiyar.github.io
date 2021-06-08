@@ -14,7 +14,7 @@
 </head>
 <body>
 	<canvas id="c"></canvas>
-	<div id="app" v-bind:class="{light: !dark}">
+	<div id="app" v-bind:class="{light: theme === 'light'}">
 		<div class="alert f2">
 			<div>
 				<b>{{text[lang].dep}}!!!</b><br>
@@ -41,14 +41,14 @@
 				<ul class="menu f2">
 					<li>
 						<button @click="setTheme()">
-							<span v-show="!dark"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>
-							<span v-show="dark"><i class="far fa-fw fa-moon" style="color:#666"></i></span>
+							<span v-show="theme === 'light'"><i class="fas fa-fw fa-sun" style="color:#fd460d"></i></span>
+							<span v-show="theme === 'dark'"><i class="far fa-fw fa-moon" style="color:#666"></i></span>
 						</button>
 					</li>
 					<li>
 						<button @click="setLang()">
 							<i class="fas fa-fw fa-globe"></i> 
-							<span v-if="en">EN</span>
+							<span v-if="lang === 'en'">EN</span>
 							<span v-else>РУС</span>
 						</button>
 					</li>
